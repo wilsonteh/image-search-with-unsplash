@@ -21,11 +21,11 @@ const useStyles = makeStyles({
    }
 })
 
-const ImageList = () => {
+const ImageList = ({ searchQuery }) => {
 
    const classes = useStyles();
    // const [ images, setImages ] = useState(null);
-   const { data: images, error, isLoading } = useUnsplash('laptop');
+   const { data: images, error, isLoading } = useUnsplash(searchQuery);
 
    console.log(images)
 

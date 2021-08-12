@@ -1,5 +1,5 @@
 import { Button } from "@material-ui/core";
-import { makeStyles, ThemeProvider } from "@material-ui/core/styles";
+import { makeStyles } from "@material-ui/core/styles";
 import theme from "../material-ui/theme";
 
 
@@ -20,7 +20,7 @@ const useStyles = makeStyles({
    },
 })
 
-const SearchBar = () => {
+const SearchForm = ({ setSearchQuery }) => {
    
    const classes = useStyles();
 
@@ -28,15 +28,14 @@ const SearchBar = () => {
       
       <div className={ classes.container }>
          <input type="text" id="search-bar" className={ classes.search_bar } 
-            placeholder='Search image keyword' />
+            placeholder='Search image keyword' onChange={(e) => setSearchQuery(e.target.value)} />
          
          <Button variant='contained' color='primary' > 
             Search 
          </Button>
       </div>   
 
-
    );
 }
  
-export default SearchBar;
+export default SearchForm;
