@@ -1,7 +1,9 @@
 import { makeStyles } from '@material-ui/core';
+import { useEffect } from 'react';
 import { useState } from 'react';
 import useUnsplash from '../hooks/useUnsplash.js';
 import theme from '../material-ui/theme.js';
+import unsplashApi from '../api/unsplash.js';
 
 const useStyles = makeStyles({
    image_list: {
@@ -24,16 +26,14 @@ const useStyles = makeStyles({
 const ImageList = ({ searchQuery }) => {
 
    const classes = useStyles();
-   // const [ images, setImages ] = useState(null);
    const { data: images, error, isLoading } = useUnsplash(searchQuery);
 
-   console.log(images)
 
    return (
       <div className={ classes.image_list }>
 
-         { isLoading && <div> Loading ... </div> }
-         { error && <div> ERROR! </div> }
+         { !images && isLoading && <div> Loading ... </div> }
+         { !isLoading && error && <div> ERROR! </div> }
          
          {/* each individual image */}
          { images && images.map((image) => (
@@ -44,7 +44,6 @@ const ImageList = ({ searchQuery }) => {
 
       </div>    
    )
-
 
 }
  

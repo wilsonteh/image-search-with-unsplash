@@ -10,6 +10,7 @@ function App() {
 
    const [ searchQuery, setSearchQuery ] = useState(null);
 
+	console.log(searchQuery)
 
 	return (
 	
