@@ -5,7 +5,7 @@ import theme from "../material-ui/theme";
 const useStyles = makeStyles({
    container: {
       width: '600px',
-      margin: theme.spacing(2, 'auto'), 
+      margin: '2rem auto', 
       display: 'flex', 
       justifyContent: 'center',
       alignItems: 'center', 
@@ -13,8 +13,8 @@ const useStyles = makeStyles({
    search_bar: {
       width: '60%',
       fontSize: '1rem', 
-      padding: theme.spacing(1),
-      margin: theme.spacing(0, 1, 0, 0),
+      padding: '0.5rem',
+      margin: '0 0.5rem 0 0',
       boxShadow: theme.shadows[1],
    },
 })

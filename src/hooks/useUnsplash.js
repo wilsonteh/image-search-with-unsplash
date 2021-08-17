@@ -9,13 +9,14 @@ const useUnsplash = (query) => {
    const [ error, setError ] = useState(null);
    const [ isLoading, setIsLoading ] = useState(true);
 
+
    // search for image with corresponding keywords 
    useEffect(() => { 
       // user hasn't enter anything in the search bar 
       // typically when the website is first loaded
       if (!query) {
          unsplashApi.search.getPhotos({ 
-            query: 'photos',  orientation: 'landscape', perPage: 30  
+            query: 'photos', orientation: 'landscape', perPage: 30
          })
             .then(data => {
                console.log(data.response.results);

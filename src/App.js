@@ -1,4 +1,4 @@
-import ThemeProvider from "@material-ui/styles/ThemeProvider";
+	import ThemeProvider from "@material-ui/styles/ThemeProvider";
 import { useState } from "react";
 
 import ImageList from "./components/ImageList";
